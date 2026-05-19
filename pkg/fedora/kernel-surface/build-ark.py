@@ -165,7 +165,7 @@ for config in configs:
 system("git add redhat/configs/custom-overrides/generic")
 system("git commit --allow-empty -m 'Merge %s config'" % args.package_name)
 
-cmd = ["make"]
+cmd = ["make", "--debug=v"]
 
 if args.mode == "rpms":
     cmd.append("dist-rpms")
