@@ -34,14 +34,14 @@ jobs:
       - name: Checkout linux-surface repo
         uses: actions/checkout@v6
         with:
-          repository: linux-surface/linux-surface
+          repository: davidbitterlich/linux-surface
           path: linux-surface
           token: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
 
       - name: Checkout kernel repository
         uses: actions/checkout@v6
         with:
-          repository: linux-surface/kernel
+          repository: davidbitterlich/kernel
           path: kernel
           fetch-depth: 0
           token: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
