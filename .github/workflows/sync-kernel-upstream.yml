@@ -36,7 +36,7 @@ jobs:
         with:
           repository: linux-surface/linux-surface
           path: linux-surface
-          token: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
+          token: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
 
       - name: Checkout kernel repository
         uses: actions/checkout@v6
@@ -44,7 +44,7 @@ jobs:
           repository: linux-surface/kernel
           path: kernel
           fetch-depth: 0
-          token: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
+          token: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
 
       - name: Setup git identity
         run: |
@@ -145,7 +145,7 @@ jobs:
       - name: Trigger rebase workflows
         if: steps.check_maintained.outputs.branches_to_rebase != ''
         env:
-          GH_TOKEN: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
           BRANCHES_TO_REBASE: ${{ steps.check_maintained.outputs.branches_to_rebase }}
         run: |
           echo "Triggering rebase workflows for updated branches..."

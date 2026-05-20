@@ -27,7 +27,7 @@ jobs:
       - name: Checkout linux-surface repo
         uses: actions/checkout@v6
         with:
-          token: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
+          token: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
           fetch-depth: 0
 
       - name: Install dependencies
@@ -114,7 +114,7 @@ jobs:
       - name: Create Pull Request
         if: steps.check.outputs.has_changes == 'true' && steps.commit.outputs.committed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
         run: |
           KERNEL_VERSION="${{ steps.commit.outputs.kernel_version }}"
           BASE_VERSION="${{ steps.commit.outputs.base_version }}"

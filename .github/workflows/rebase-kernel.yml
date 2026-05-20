@@ -46,7 +46,7 @@ jobs:
           path: kernel
           ref: ${{ inputs.branch }}
           fetch-depth: 0
-          token: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
+          token: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
 
       - name: Install build dependencies
         run: |
@@ -124,7 +124,7 @@ jobs:
       - name: Trigger patch generation
         if: steps.rebase.outputs.success == 'true' && steps.rebase.outputs.already_uptodate != 'true' && (inputs.build == false || steps.build.outputs.build_success == 'true') && inputs.dry_run == false
         env:
-          GH_TOKEN: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
           KERNEL_BRANCH: ${{ inputs.branch }}
           TARGET_TAG: ${{ steps.rebase.outputs.target_tag }}
         run: |
