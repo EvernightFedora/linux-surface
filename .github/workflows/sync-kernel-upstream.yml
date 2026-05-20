@@ -56,7 +56,6 @@ jobs:
       - name: Sync with upstream
         id: sync
         working-directory: kernel
-        token: ${{ secrets.DAVIDSSURFACEBOT_TOKEN }}
         run: |
           echo "Getting current origin tags..."
           git ls-remote --tags origin | awk '{print $2}' | sed 's|refs/tags/||' | grep -v '\^{}' | sort > /tmp/origin-tags.txt
