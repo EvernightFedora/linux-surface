@@ -35,7 +35,7 @@ PACKAGE_RELEASE = "2"
 ##
 ## To list the available options, run make dist-full-help in the kernel-ark tree.
 ##
-KERNEL_BUILDOPTS = "+up +baseonly -debuginfo -doc -headers -efiuki"
+KERNEL_BUILDOPTS = "+up +baseonly -debuginfo -doc -headers -efiuki -kabi"
 
 #####################################################################
 
