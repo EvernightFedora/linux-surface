@@ -19,13 +19,13 @@ PACKAGE_NAME = "surface"
 ## Fedora tags: kernel-X.Y.Z
 ## Upstream tags: vX.Y.Z
 ##
-PACKAGE_TAG = "kernel-7.0.10-0"
+PACKAGE_TAG = "kernel-7.0.10-1"
 
 ##
 ## The release number of the modified kernel package.
 ## e.g. 300 for kernel-6.3.1-300.fc38.foo
 ##
-PACKAGE_RELEASE = "1"
+PACKAGE_RELEASE = "2"
 
 ##
 ## Build options for configuring which parts of the kernel package are enabled.
@@ -35,7 +35,7 @@ PACKAGE_RELEASE = "1"
 ##
 ## To list the available options, run make dist-full-help in the kernel-ark tree.
 ##
-KERNEL_BUILDOPTS = "+up +baseonly -debuginfo -doc -headers -efiuki -kabi"
+KERNEL_BUILDOPTS = "+up +baseonly -debuginfo -doc -headers -efiuki"
 
 #####################################################################
 
