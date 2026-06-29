@@ -1,0 +1,30 @@
+Date: Fri, 29 May 2026 00:00:00 +0000
+Subject: [PATCH] HID: ipts: bump IPTS_HID_REPORT_DATA_SIZE to 7488 to match descriptor
+
+Commit 0a3fe972a7 made hid-core stricter: instead of zero-padding a HID report
+that is shorter than its descriptor expects, it now returns -EINVAL. IPTS builds
+report 65 at 7485 bytes, but the descriptor expects 7488 (1 id + 2 scan-time +
+7485 data), so on EDS1 devices like the Surface Book 1 every frame is rejected
+with "Failed to process buffer: -22" and touch stops working. Bump the size to
+7488 to match.
+
+Link: https://github.com/linux-surface/linux-surface/issues/2150
+---
+ drivers/hid/ipts/desc.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/hid/ipts/desc.h b/drivers/hid/ipts/desc.h
+index 307438c..972a769 100644
+--- a/drivers/hid/ipts/desc.h
++++ b/drivers/hid/ipts/desc.h
+@@ -14,7 +14,7 @@
+ #define IPTS_HID_REPORT_DATA	    65
+ #define IPTS_HID_REPORT_SET_MODE    66
+ 
+-#define IPTS_HID_REPORT_DATA_SIZE 7485
++#define IPTS_HID_REPORT_DATA_SIZE 7488
+ 
+ /*
+  * HID descriptor for singletouch data.
+--
+2.43.0
