@@ -1036,12 +1036,12 @@ Patchset: cameras
  1 file changed, 14 insertions(+)
 
 diff --git a/drivers/media/pci/intel/ipu-bridge.c b/drivers/media/pci/intel/ipu-bridge.c
-index 3d9be9e5c065..a69a34ece51d 100644
+index 5473dd598d5b623af6deff73238a6321cad07bb0..5473dd598d5b623af6deff73238a6321cad07bb0 100644
 --- a/drivers/media/pci/intel/ipu-bridge.c
 +++ b/drivers/media/pci/intel/ipu-bridge.c
-@@ -138,6 +138,20 @@ static const struct dmi_system_id upside_down_sensor_dmi_ids[] = {
+@@ -182,6 +182,20 @@ static const struct dmi_system_id upside_down_sensor_dmi_ids[] = {
  		},
- 		.driver_data = "OVTI02C1",
+ 		.driver_data = "SONY471A",
  	},
 +	{
 +		.matches = {
@@ -1062,4 +1062,3 @@ index 3d9be9e5c065..a69a34ece51d 100644
  
 -- 
 2.55.0
-
